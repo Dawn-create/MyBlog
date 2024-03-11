@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="66d76a79-d04b-45c7-927f-f42c2d6ff066" name="更改" comment="myblog第一次提交">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/730f07c0-14b1-4f0e-af63-fe85fbe041b9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/730f07c0-14b1-4f0e-af63-fe85fbe041b9/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/730f07c0-14b1-4f0e-af63-fe85fbe041b9/storage_v2/_src_/schema/myblog.TofXwA.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/730f07c0-14b1-4f0e-af63-fe85fbe041b9/storage_v2/_src_/schema/mysql.osA4Bg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/730f07c0-14b1-4f0e-af63-fe85fbe041b9/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/730f07c0-14b1-4f0e-af63-fe85fbe041b9/storage_v2/_src_/schema/sys.zb4BAA.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/easyCodeTableSetting.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-admin/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-blog/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-blog/src/main/java/com/itdawn/DawnBlogApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-blog/src/main/java/com/itdawn/controller/ArticleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-blog/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/domain/entity/Article.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/enums/AppHttpCodeEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/mapper/ArticleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/ArticleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/impl/ArticleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2dUXxNsUjHYeaFKeN1U9fnMOVfD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Maven.dawn-framework [clean].executor": "Run",
+    "Maven.dawn-framework [install].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.DawnBlogApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "jdk.selected.JAVA_MODULE": "11",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/Users/dawnjiao/Desktop/Job/Java/MyBlog/dawn-blog/src/main/java/com/itdawn/Main.java",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="DawnBlogApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="dawn-blog" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.itdawn.DawnBlogApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itdawn.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.DawnBlogApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-11.0.21-corretto-11.0.21-4caba194b151-b24ef850" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration useDefault="false">$USER_HOME$/.subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="66d76a79-d04b-45c7-927f-f42c2d6ff066" name="更改" comment="" />
+      <created>1710063875843</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1710063875843</updated>
+      <workItem from="1710063878012" duration="3835000" />
+      <workItem from="1710149299362" duration="1719000" />
+      <workItem from="1710154965386" duration="895000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="myblog第一次提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="myblog第一次提交" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/itdawn/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.springframework.context.ApplicationContextException" package="org.springframework.context" />
+          <option name="timeStamp" value="5" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
