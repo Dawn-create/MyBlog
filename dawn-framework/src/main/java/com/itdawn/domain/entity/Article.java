@@ -1,12 +1,12 @@
 package com.itdawn.domain.entity;
 
-import java.util.Date;
-import java.io.Serializable;
-
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Date;
 
 /**
  * 文章表(Article)表实体类
@@ -31,6 +31,11 @@ public class Article {
     private String summary;
 //所属分类id
     private Long categoryId;
+
+    //所属分类名称
+    //因为实际上表中并没有categoryName这一列，所以需要加上注解
+    @TableField(exist = false)//代表这个字段在数据库中不存在，避免MyBatisPlus在查询时报错
+    private String categoryName;
 //缩略图
     private String thumbnail;
 //是否置顶（0否，1是）
