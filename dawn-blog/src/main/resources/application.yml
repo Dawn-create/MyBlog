@@ -17,10 +17,15 @@ spring:
       # HTTP请求中包含的所有文件的总大小的最大允许值
       max-request-size: 20MB
 
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
 mybatis-plus:
-  configuration:
-    # 日志
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  #注释掉mybatisplus的日志信息，避免对我们的日志信息造成干扰
+  #  configuration:
+  #    # 日志
+  #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   global-config:
     db-config:
       # 逻辑删除的字段
@@ -31,3 +36,9 @@ mybatis-plus:
       logic-not-delete-value: 0
       # 主键自增策略，以mysql数据库为准
       id-type: auto
+
+
+oss:
+  accessKey: "OFnzRN4eTaCp29WgKy4mXD0Qk3fkAXIXkM79aOj1"
+  secretKey: "wQDZoVHSf-NxeLr9VmxjSmjMv2px-eWmbFAUIGJX"
+  bucket: "dawn-myblog"

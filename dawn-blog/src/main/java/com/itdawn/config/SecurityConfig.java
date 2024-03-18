@@ -59,6 +59,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //退出登录的配置。如果'没登录'就调用'退出登录'，就会报错，报的错设置为'401 需要登录后操作'，也就是authenticated
                 .antMatchers("/logout").authenticated()
                 .antMatchers("/user/userInfo").authenticated()
+                //把文件上传的接口设置为需要登录才能访问
+                //.antMatchers("/upload").authenticated()
+                //需要登录才能在评论区发送评论
+                .antMatchers("comment").authenticated()
 
                 // 除上面外的所有请求全部不需要认证即可访问
                 .anyRequest().permitAll();
@@ -67,8 +71,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.exceptionHandling()
                         .authenticationEntryPoint(authenticationEntryPoint)
                         .accessDeniedHandler(accessDeniedHandler);
-
-
         http.logout().disable();
 
         //把JwtAuthenticationTokenFilter过滤器添加到Security的过滤器链中
@@ -78,5 +80,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         //允许跨域
         http.cors();
     }
+
 
 }

@@ -15,13 +15,12 @@ import com.itdawn.mapper.ArticleMapper;
 import com.itdawn.service.ArticleService;
 import com.itdawn.service.CategoryService;
 import com.itdawn.utils.BeanCopyUtils;
+import com.itdawn.utils.RedisCache;
+import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -29,11 +28,24 @@ import java.util.stream.Collectors;
 //ServiceImpl是mybatisPlus官方提供的
 public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> implements ArticleService {
 
+    @Autowired
+    private ArticleService articleService;
 
     //----------------------------------查询热门文章---------------------------------
 
     @Override
     public ResponseResult hotArticleList() {
+        //-------------------每调用这个方法就从redis查询文章的浏览量，展示在热门文章列表------------------------
+        //获取redis中的浏览量，注意得到的viewCountMap是HashMap双列集合
+        Map<String, Integer> viewCountMap = redisCache.getCacheMap("article: viewCount");
+        //让双列集合调用entrySet方法即可转为单列集合，然后才能调用stream方法
+        List<Article> viewArticles = viewCountMap.entrySet()
+                .stream()
+                .map(entry -> new Article(Long.valueOf(entry.getKey()), entry.getValue().longValue()))
+                .collect(Collectors.toList());
+        articleService.updateBatchById(viewArticles);
+
+        //-----------------------------------------------------------------------------------------
         //查询热门文章，封装成ResponseResult返回
         //用来封装查询条件
         LambdaQueryWrapper<Article> queryWrapper = new LambdaQueryWrapper<>();
@@ -45,10 +57,6 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
          * 最多只能查出来10条消息
          *实际开发时，都不允许直接在代码中使用字面值(代码中的固定值)。都需要定义成常量来使用。这种方式有利于提高代码的可维护性
          * */
-        //不能把草稿展示出来,必须是正式文章
-        //blog_article中定义：状态（0已发布，1草稿）
-        //可以用 ("status",0) 的方式，但是存在风险，因为字符串不一定能完全匹配，最好用方法引用
-        //queryWrapper.eq(Article::getStatus, 0);
         queryWrapper.eq(Article::getStatus, SystemCanstants.ARTICLE_STATUS_NORMAL);
         //要按照浏览量进行降序排序
         queryWrapper.orderByDesc(Article::getViewCount);
@@ -59,14 +67,6 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
         List<Article> articles = page.getRecords();
         //但是直接用list会把所有的字段都显示出来，所以要用VO进行优化
         //Bean拷贝
-//        List<HotArticleVo> articleVos = new ArrayList<>();
-//        for (Article article : articles) {
-//            HotArticleVo vo = new HotArticleVo();
-//            //此时vo中就具有article 的三个属性:id，title，viewCount
-//            //字段的名字和类型一定要一致，否则拷贝不进去
-//            BeanUtils.copyProperties(article, vo);
-//            articleVos.add(vo);
-//        }
         List<HotArticleVo> hotArticleVos = BeanCopyUtils.copyBeanList(articles, HotArticleVo.class);
         return ResponseResult.okResult(hotArticleVos);
 
@@ -112,9 +112,9 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
         articles.stream()
                 .map(new Function<Article, Article>() {
                     @Override
-                    public Article apply(Article article){
+                    public Article apply(Article article) {
                         //'article.getCategoryId()'表示从article表获取category_id字段，然后作为查询category表的name字段
-                        Category category=categoryService.getById(article.getCategoryId());
+                        Category category = categoryService.getById(article.getCategoryId());
                         String name = category.getName();
                         //把查询出来的category表的name字段值，也就是article，设置给Article实体类的categoryName成员变量
                         article.setCategoryName(category.getName());
@@ -123,7 +123,6 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
                     }
                 })
                 .collect(Collectors.toList());
-        
 
 
         //把最后的查询结果封装成ArticleListVo。
@@ -147,12 +146,26 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
         Long categoryId = articleDetailVo.getCategoryId();
         Category category = categoryService.getById(categoryId);
 
-        if(category!=null){
+        if (category != null) {
             articleDetailVo.setCategoryName(category.getName());
         }
 
         //封装响应返回。
         return ResponseResult.okResult(articleDetailVo);
     }
+
+    //----------------------------------增加文章浏览量---------------------------------
+    @Autowired
+    private RedisCache redisCache;
+
+    @Override
+    public ResponseResult updateViewCount(Long id) {
+        //更新redis中的浏览量，对应文章id的viewCount浏览量。article:viewCount是ViewCountRunner类里面写的
+        //用户每从mysql根据文章id查询一次浏览量，那么redis的浏览量就增加1
+        redisCache.incrementCacheMapValue("article: viewCount", id.toString(), 1);
+        return ResponseResult.okResult();
+    }
+
+
 }
 

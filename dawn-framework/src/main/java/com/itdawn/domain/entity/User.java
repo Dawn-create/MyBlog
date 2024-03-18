@@ -3,6 +3,8 @@ package com.itdawn.domain.entity;
 import java.util.Date;
 import java.io.Serializable;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,7 +22,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @TableName("blog_user")
 public class User {
-    //主键
+    //主键，禁用雪花算法，使用mysql的主键自增策略
+    @TableId(type = IdType.AUTO)
     private Long id;
     //用户名
     private String userName;
