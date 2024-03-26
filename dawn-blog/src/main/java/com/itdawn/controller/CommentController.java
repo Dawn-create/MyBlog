@@ -6,11 +6,13 @@ import com.itdawn.constants.SystemCanstants;
 import com.itdawn.domain.ResponseResult;
 import com.itdawn.domain.entity.Comment;
 import com.itdawn.service.CommentService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/comment")
+@Api(tags = "评论的相关接口文档", description = "我是描述信息")
 public class CommentController {
     @Autowired
     CommentService commentService;

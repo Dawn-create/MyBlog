@@ -45,14 +45,29 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
         Claims claims = null;
         try {
             claims = JwtUtil.parseJWT(token);
-        } catch (Exception e) {
-            //当token过期或token被篡改就会进入下面那行的异常处理
+       } catch (Exception e) {
+            // Token 过期或被篡改处理
             e.printStackTrace();
-            //报异常之后，把异常响应给前端，需要重新登录。ResponseResult、AppHttpCodeEnum、WebUtils是我们在dawn-framework工程写的类
-            ResponseResult result = ResponseResult.errorResult(AppHttpCodeEnum.EXIPRED_TOKEN);
-            WebUtils.renderString(response, JSON.toJSONString(result));
+            if (e instanceof io.jsonwebtoken.ExpiredJwtException) {
+                // Token 过期
+                ResponseResult result = ResponseResult.errorResult(AppHttpCodeEnum.EXPIRED_TOKEN);
+                WebUtils.renderString(response, JSON.toJSONString(result));
+            } else {
+                // Token 被篡改
+                System.out.println("Token 被篡改：" + token);
+                ResponseResult result = ResponseResult.errorResult(AppHttpCodeEnum.TAMPERED_TOKEN);
+                WebUtils.renderString(response, JSON.toJSONString(result));
+            }
             return;
         }
+//        catch (Exception e) {
+//            //当token过期或token被篡改就会进入下面那行的异常处理
+//            e.printStackTrace();
+//            //报异常之后，把异常响应给前端，需要重新登录。ResponseResult、AppHttpCodeEnum、WebUtils是我们在dawn-framework工程写的类
+//            ResponseResult result = ResponseResult.errorResult(AppHttpCodeEnum.EXIPRED_TOKEN);
+//            WebUtils.renderString(response, JSON.toJSONString(result));
+//            return;
+//        }
         String userid = claims.getSubject();
 
         //在redis中，通过key来获取value，注意key我们是加过前缀的，取的时候也要加上前缀

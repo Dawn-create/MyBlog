@@ -4,40 +4,458 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66d76a79-d04b-45c7-927f-f42c2d6ff066" name="更改" comment="增加用户登录和退出还有评论">
-      <change afterPath="$PROJECT_DIR$/dawn-blog/src/main/java/com/itdawn/config/SwaggerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dawn-blog/src/main/java/com/itdawn/controller/UploadController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dawn-blog/src/main/java/com/itdawn/job/MyJob.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dawn-blog/src/main/java/com/itdawn/runner/ViewCountRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dawn-blog/src/main/test/java/com/itdawn/OSSTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/annotation/SystemLog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/aspect/LogAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/cronjob/UpdateViewCount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/OssUploadService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/impl/OssUploadServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/utils/PathUtils.java" afterDir="false" />
+    <list default="true" id="66d76a79-d04b-45c7-927f-f42c2d6ff066" name="更改" comment="新增博客后台模块登陆+权限控制+动态路由+文章增删改查功能">
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/.env.development" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/.env.production" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/.env.staging" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/.eslintignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/README-zh.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/jest.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/jsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/postcss.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/api/content/article.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/api/content/category.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/api/content/link.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/api/content/tag.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/api/content/upload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/api/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/api/menu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/api/system/role.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/api/system/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/404_images/404.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/404_images/404_cloud.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/404.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/bug.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/build.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/button.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/cascader.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/chart.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/checkbox.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/clipboard.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/code.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/color.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/component.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/dashboard.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/date-range.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/date.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/dict.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/documentation.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/download.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/drag.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/druid.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/edit.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/education.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/email.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/example.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/excel.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/exit-fullscreen.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/eye-open.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/eye.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/form.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/fullscreen.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/github.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/guide.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/input.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/international.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/job.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/language.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/link.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/list.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/lock.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/log.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/logininfor.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/message.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/money.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/monitor.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/nested.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/number.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/online.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/password.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/pdf.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/people.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/peoples.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/phone.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/post.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/qq.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/question.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/radio.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/rate.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/redis.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/row.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/search.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/select.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/server.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/shopping.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/size.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/skill.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/slider.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/star.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/swagger.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/switch.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/system.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/tab.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/table.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/textarea.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/theme.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/time-range.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/time.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/tool.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/tree-table.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/tree.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/upload.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/user.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/validCode.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/wechat.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svg/zip.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/icons/svgo.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/images/dark.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/images/light.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/images/login-background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/assets/images/profile.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/components/Breadcrumb/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/components/Hamburger/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/components/ParentView/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/components/SvgIcon/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/directive/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/directive/permission/hasPermission.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/layout/components/AppMain.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/layout/components/InnerLink/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/layout/components/Navbar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/layout/components/Sidebar/FixiOSBug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/layout/components/Sidebar/Item.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/layout/components/Sidebar/Link.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/layout/components/Sidebar/Logo.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/layout/components/Sidebar/SidebarItem.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/layout/components/Sidebar/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/layout/components/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/layout/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/layout/mixin/ResizeHandler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/permission.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/plugins/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/plugins/cache.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/plugins/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/plugins/modal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/router/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/settings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/store/getters.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/store/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/store/modules/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/store/modules/permission.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/store/modules/settings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/store/modules/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/styles/element-ui.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/styles/index.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/styles/mixin.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/styles/sidebar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/styles/transition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/styles/variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/utils/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/utils/downloadService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/utils/errorCode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/utils/get-page-title.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/utils/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/utils/jscencrypt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/utils/permission.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/utils/request.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/utils/sg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/utils/validate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/views/content/article/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/views/content/article/write/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/views/content/category/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/views/content/link/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/views/content/tag/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/views/dashboard/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/views/login/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/views/system/menu/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/views/system/role/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/src/views/system/user/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/tests/unit/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/tests/unit/components/Breadcrumb.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/tests/unit/components/Hamburger.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/tests/unit/components/SvgIcon.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/tests/unit/utils/formatTime.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/tests/unit/utils/param2Obj.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/tests/unit/utils/parseTime.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/tests/unit/utils/validate.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-vue/vue.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-admin/src/main/java/com/itdawn/DawnAdminApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-admin/src/main/java/com/itdawn/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-admin/src/main/java/com/itdawn/config/SwaggerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-admin/src/main/java/com/itdawn/controller/ArticleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-admin/src/main/java/com/itdawn/controller/CategoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-admin/src/main/java/com/itdawn/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-admin/src/main/java/com/itdawn/controller/TagController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-admin/src/main/java/com/itdawn/controller/UploadController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-admin/src/main/java/com/itdawn/filter/JwtAuthenticationTokenFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-admin/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/domain/entity/ArticleTag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/domain/entity/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/domain/entity/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/domain/entity/Tag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/domain/vo/AdminUserInfoVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/domain/vo/ArticleByIdVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/domain/vo/ArticleVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/domain/vo/RoutersVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/domain/vo/TagVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/dto/AddArticleDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/dto/AddTagDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/dto/ArticleDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/dto/EditTagDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/dto/TabListDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/dto/TagListDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/mapper/ArticleTagMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/mapper/ArticleVoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/mapper/MenuMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/mapper/RoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/mapper/TagMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/ArticleTagService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/ArticleVoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/LoginService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/MenuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/RoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/TagService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/impl/ArticleTagServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/impl/ArticleVoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/impl/LoginServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/impl/MenuServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/impl/RoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/impl/TagServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/resources/mapper/MenuMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/resources/mapper/RoleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dawn-framework/src/main/resources/mapper/TagMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/730f07c0-14b1-4f0e-af63-fe85fbe041b9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/730f07c0-14b1-4f0e-af63-fe85fbe041b9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/730f07c0-14b1-4f0e-af63-fe85fbe041b9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/730f07c0-14b1-4f0e-af63-fe85fbe041b9/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/730f07c0-14b1-4f0e-af63-fe85fbe041b9/storage_v2/_src_/schema/myblog.TofXwA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/730f07c0-14b1-4f0e-af63-fe85fbe041b9/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/730f07c0-14b1-4f0e-af63-fe85fbe041b9/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/730f07c0-14b1-4f0e-af63-fe85fbe041b9/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/easyCodeTableSetting.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/easyCodeTableSetting.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/README.markdown" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-vue/dist/static/js/9.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog-vue/dist/static/js/9.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-vue/src/api/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog-vue/src/api/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dawn-blog/src/main/java/com/itdawn/DawnBlogApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/dawn-blog/src/main/java/com/itdawn/DawnBlogApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dawn-blog/src/main/java/com/itdawn/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/dawn-blog/src/main/java/com/itdawn/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dawn-blog/src/main/java/com/itdawn/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dawn-blog/src/main/java/com/itdawn/controller/ArticleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dawn-blog/src/main/java/com/itdawn/controller/BlogLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dawn-blog/src/main/java/com/itdawn/controller/BlogLoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dawn-blog/src/main/java/com/itdawn/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dawn-blog/src/main/java/com/itdawn/controller/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dawn-blog/src/main/java/com/itdawn/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dawn-blog/src/main/java/com/itdawn/controller/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dawn-blog/src/main/java/com/itdawn/controller/LinkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dawn-blog/src/main/java/com/itdawn/controller/LinkController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dawn-blog/src/main/java/com/itdawn/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dawn-blog/src/main/java/com/itdawn/controller/UploadController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dawn-blog/src/main/java/com/itdawn/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dawn-blog/src/main/java/com/itdawn/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dawn-blog/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/dawn-blog/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dawn-framework/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dawn-framework/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dawn-blog/src/main/java/com/itdawn/filter/JwtAuthenticationTokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/dawn-blog/src/main/java/com/itdawn/filter/JwtAuthenticationTokenFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/constants/SystemCanstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/constants/SystemCanstants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/domain/entity/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/domain/entity/Article.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/domain/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/domain/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/domain/vo/CategoryVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/domain/vo/CategoryVo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/enums/AppHttpCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/enums/AppHttpCodeEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/ArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/ArticleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/CategoryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/impl/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/impl/ArticleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/utils/RedisCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/utils/RedisCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/impl/BlogLoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/impl/BlogLoginServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/service/impl/CategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/utils/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/utils/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/.env.development" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/.env.production" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/.env.staging" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/.eslintignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/.eslintrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/README-zh.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/babel.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/jest.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/jsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/postcss.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/api/content/article.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/api/content/category.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/api/content/link.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/api/content/tag.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/api/content/upload.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/api/login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/api/menu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/api/system/role.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/api/system/user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/404_images/404.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/404_images/404_cloud.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/404.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/bug.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/build.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/button.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/cascader.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/chart.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/checkbox.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/clipboard.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/code.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/color.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/component.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/dashboard.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/date-range.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/date.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/dict.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/documentation.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/download.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/drag.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/druid.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/edit.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/education.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/email.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/example.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/excel.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/exit-fullscreen.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/eye-open.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/eye.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/form.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/fullscreen.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/github.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/guide.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/input.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/international.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/job.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/language.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/link.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/list.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/lock.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/log.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/logininfor.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/message.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/money.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/monitor.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/nested.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/number.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/online.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/password.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/pdf.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/people.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/peoples.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/phone.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/post.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/qq.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/question.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/radio.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/rate.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/redis.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/row.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/search.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/select.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/server.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/shopping.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/size.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/skill.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/slider.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/star.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/swagger.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/switch.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/system.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/tab.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/table.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/textarea.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/theme.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/time-range.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/time.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/tool.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/tree-table.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/tree.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/upload.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/user.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/validCode.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/wechat.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svg/zip.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/icons/svgo.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/images/dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/images/light.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/images/login-background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/assets/images/profile.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/components/Breadcrumb/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/components/Hamburger/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/components/ParentView/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/components/SvgIcon/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/directive/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/directive/permission/hasPermission.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/layout/components/AppMain.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/layout/components/InnerLink/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/layout/components/Navbar.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/layout/components/Sidebar/FixiOSBug.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/layout/components/Sidebar/Item.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/layout/components/Sidebar/Link.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/layout/components/Sidebar/Logo.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/layout/components/Sidebar/SidebarItem.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/layout/components/Sidebar/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/layout/components/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/layout/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/layout/mixin/ResizeHandler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/permission.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/plugins/auth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/plugins/cache.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/plugins/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/plugins/modal.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/router/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/settings.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/store/getters.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/store/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/store/modules/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/store/modules/permission.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/store/modules/settings.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/store/modules/user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/styles/element-ui.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/styles/index.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/styles/mixin.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/styles/sidebar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/styles/transition.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/styles/variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/utils/auth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/utils/downloadService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/utils/errorCode.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/utils/get-page-title.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/utils/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/utils/jscencrypt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/utils/permission.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/utils/request.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/utils/sg.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/utils/validate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/views/content/article/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/views/content/article/write/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/views/content/category/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/views/content/link/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/views/content/tag/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/views/dashboard/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/views/login/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/views/system/menu/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/views/system/role/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/src/views/system/user/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/tests/unit/.eslintrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/tests/unit/components/Breadcrumb.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/tests/unit/components/Hamburger.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/tests/unit/components/SvgIcon.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/tests/unit/utils/formatTime.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/tests/unit/utils/param2Obj.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/tests/unit/utils/parseTime.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/tests/unit/utils/validate.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin/vue.config.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +497,7 @@
     <option name="jreName" value="corretto-1.8" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
@@ -96,56 +514,60 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "JUnit.OSSTest.executor": "Debug",
-    "JUnit.OSSTest.test (1).executor": "Run",
-    "JUnit.OSSTest.test.executor": "Run",
-    "JUnit.OSSTest.testOss.executor": "Run",
-    "Maven.MyBlog [clean].executor": "Run",
-    "Maven.MyBlog [compile].executor": "Run",
-    "Maven.MyBlog [install].executor": "Run",
-    "Maven.dawn-blog [clean].executor": "Run",
-    "Maven.dawn-blog [install].executor": "Run",
-    "Maven.dawn-blog [test].executor": "Run",
-    "Maven.dawn-framework [clean].executor": "Run",
-    "Maven.dawn-framework [compile].executor": "Run",
-    "Maven.dawn-framework [install].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.DawnBlogApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "11",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/dawnjiao/Desktop/Job/Java/MyBlog",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "/Users/dawnjiao/Desktop/Job/Java/MyBlog/dawn-blog/src/main/java/com/itdawn/Main.java",
-    "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.3264368",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "ts.external.directory.path": "/Applications/IntelliJ IDEA.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true",
-    "应用程序.BeanCopyUtils.executor": "Run",
-    "应用程序.CategoryServiceImpl.executor": "Run",
-    "应用程序.JwtUtil.executor": "Run"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;JUnit.OSSTest.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.OSSTest.test (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OSSTest.test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OSSTest.testOss.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.MyBlog [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.MyBlog [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.MyBlog [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.dawn-admin [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.dawn-admin [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.dawn-admin [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.dawn-blog [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.dawn-blog [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.dawn-blog [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.dawn-framework [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.dawn-framework [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.dawn-framework [install].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.DawnAdminApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.DawnBlogApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/dawnjiao/Desktop/Job/Java/MyBlog/dawn-admin/src/main/java/com/itdawn&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/dawnjiao/Desktop/Job/Java/MyBlog/dawn-blog/src/main/java/com/itdawn/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.3264368&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/IntelliJ IDEA.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;,
+    &quot;应用程序.BeanCopyUtils.executor&quot;: &quot;Run&quot;,
+    &quot;应用程序.CategoryServiceImpl.executor&quot;: &quot;Run&quot;,
+    &quot;应用程序.JwtUtil.executor&quot;: &quot;Run&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -153,26 +575,15 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.itdawn.service" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dawn-admin/src/main/java/com/itdawn" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dawn-framework/src/main/resources/mapper" />
       <recent name="$PROJECT_DIR$/dawn-framework/src/main/java/com/itdawn/utils" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.DawnBlogApplication">
-    <configuration name="OSSTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="dawn-blog" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="java.com.itdawn.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="java.com.sangeng" />
-      <option name="MAIN_CLASS_NAME" value="java.com.itdawn.OSSTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="OSSTest.test (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dawn-blog" />
       <extension name="coverage">
@@ -221,6 +632,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DawnAdminApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="dawn-admin" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.itdawn.DawnAdminApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itdawn.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DawnBlogApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="dawn-blog" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.itdawn.DawnBlogApplication" />
@@ -237,10 +661,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.DawnBlogApplication" />
+        <item itemvalue="Spring Boot.DawnAdminApplication" />
         <item itemvalue="JUnit.OSSTest.testOss" />
         <item itemvalue="JUnit.OSSTest.test (1)" />
         <item itemvalue="JUnit.OSSTest.test" />
-        <item itemvalue="JUnit.OSSTest" />
       </list>
     </recent_temporary>
   </component>
@@ -279,6 +703,8 @@
       <workItem from="1710422883978" duration="6757000" />
       <workItem from="1710491396364" duration="18713000" />
       <workItem from="1710573788851" duration="21124000" />
+      <workItem from="1711361712365" duration="49000" />
+      <workItem from="1711361770462" duration="1290000" />
     </task>
     <task id="LOCAL-00001" summary="myblog第一次提交">
       <option name="closed" value="true" />
@@ -303,8 +729,38 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="9c8041de-c0e1-4f75-89ee-23a7b42c0bb0" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
+        <entry key="9c8041de-c0e1-4f75-89ee-23a7b42c0bb0">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State />
@@ -319,7 +775,8 @@
     <MESSAGE value="增加文章接口" />
     <MESSAGE value="增加文章接口，分类接口和分页接口" />
     <MESSAGE value="增加用户登录和退出还有评论" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加用户登录和退出还有评论" />
+    <MESSAGE value="新增博客后台模块登陆+权限控制+动态路由+文章增删改查功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增博客后台模块登陆+权限控制+动态路由+文章增删改查功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -334,6 +791,16 @@
           <line>64</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/dawn-blog/src/main/java/com/itdawn/filter/JwtAuthenticationTokenFilter.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/dawn-admin/src/main/java/com/itdawn/filter/JwtAuthenticationTokenFilter.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="org.springframework.context.ApplicationContextException" package="org.springframework.context" />
           <option name="timeStamp" value="5" />
@@ -344,6 +811,13 @@
       <configuration name="SpringBootApplicationConfigurationType">
         <watch expression="authenticationToken.principal" language="JAVA" />
       </configuration>
+      <inline-watch fileUrl="file://$PROJECT_DIR$/dawn-admin/src/main/java/com/itdawn/filter/JwtAuthenticationTokenFilter.java" line="46">
+        <watch expression="token" language="JAVA" />
+      </inline-watch>
     </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

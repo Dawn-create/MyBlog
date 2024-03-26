@@ -2,6 +2,9 @@ package com.itdawn.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.itdawn.domain.ResponseResult;
 import com.itdawn.domain.entity.Category;
+import com.itdawn.domain.vo.CategoryVo;
+
+import java.util.List;
 
 /**
  * 分类表(Category)表服务接口
@@ -12,4 +15,6 @@ import com.itdawn.domain.entity.Category;
 public interface CategoryService extends IService<Category> {
     //查询文章分类的接口
     ResponseResult getCategoryList();
+
+    List<CategoryVo> listAllCategory();
 }

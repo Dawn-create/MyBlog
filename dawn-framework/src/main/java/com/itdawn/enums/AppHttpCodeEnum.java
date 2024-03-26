@@ -6,7 +6,9 @@ public enum AppHttpCodeEnum {
     // 登录
     NEED_LOGIN(401,"需要登录后操作"),
 
-    EXIPRED_TOKEN(402, "Token过期或被篡改"),
+    EXPIRED_TOKEN(402, "Token过期"),
+
+    TAMPERED_TOKEN(556, "Token被篡改"),
     NO_OPERATOR_AUTH(403,"无权限操作"),
     SYSTEM_ERROR(500,"出现错误"),
     USERNAME_EXIST(501,"用户名已存在"),

@@ -80,15 +80,6 @@ public class JwtUtil {
         return builder.compact();
     }
 
-
-    public static void main(String[] args) throws Exception {
-        String token = "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3OTc1YmZkOTA5ZTg0NTZlYTU3MDI4ZjIzZDZmYTA3YiIsInN1YiI6ImRhd24iLCJpc3MiOiJzZyIsImlhdCI6MTcxMDQwNzI0OSwiZXhwIjoxNzEwNjY2NDQ5fQ.ADY8lZYqARsmvRXJn0-RkmPAiUvJI8Q_9X8r8s8shEw";
-        Claims claims = parseJWT(token);
-        System.out.println(claims);
-//        String new_token=createJWT("dawn");
-//        System.out.println("生成的新token为：" +  new_token);
-    }
-
     /**
      * 生成加密后的秘钥 secretKey
      *
@@ -114,4 +105,14 @@ public class JwtUtil {
                 .parseClaimsJws(jwt)
                 .getBody();
     }
+
+
+
+//    public static void main(String[] args) throws Exception {
+//        String token = "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI1ZGZlNjdiMmNkMzU0YjM1YWI5ODAwNDEyMmRhYjhhNSIsInN1YiI6InNhbmdlbmciLCJpc3MiOiJzZyIsImlhdCI6MTcxMTI2NDE4NCwiZXhwIjoxNzQyODAwMTg0fQ.Dfvz1dfI1_akz1BoE5hDmm-oZNXO0Dn62HEmPj3AMww";
+//        Claims claims = parseJWT(token);
+//        System.out.println(claims);
+//        String new_token=createJWT("dawn");
+//        System.out.println("生成的新token为：" +  new_token);
+//    }
 }

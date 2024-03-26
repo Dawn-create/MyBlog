@@ -5,6 +5,7 @@ import com.itdawn.domain.entity.User;
 import com.itdawn.enums.AppHttpCodeEnum;
 import com.itdawn.exception.SystemException;
 import com.itdawn.service.BlogLoginService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@Api(tags = "登陆的相关接口文档", description = "我是描述信息")
+
 public class BlogLoginController {
 
     @Autowired

@@ -441,3 +441,58 @@ public class myCommandLineRunner implements CommandLineRunner {
 1. 添加@EnableScheduling注解，就能开启定时任务功能
 
 cron表达式是用来设置定时任务执行时间的表达式。cron表达式生成器网站 -> https://www.bejson.com/othertools/cron/
+
+
+## 后台模块
+
+### 登录功能
+
+和前台系统几乎一样，复制过来修改链接名即可
+
+### 权限控制
+
+1. 接口分析
+
+   接口设计。对应用户只能使用自己的权限所允许使用的功能
+![img_1.png](img_1.png)
+
+响应格式如下。如果用户id为1代表管理员，roles 中只需要有admin，permissions中需要有所有菜单类型为C或者F的，状态为正常的，未被删除的权限
+
+```json
+{
+	"code":200,
+	"data":{
+		"permissions":[
+			"system:user:list",
+            "system:role:list",
+			"system:menu:list",
+			"system:user:query",
+			"system:user:add"
+            //此次省略1000字
+		],
+		"roles":[
+			"admin"
+		],
+		"user":{
+			"avatar":"http://r7yxkqloa.bkt.clouddn.com/2022/03/05/75fd15587811443a9a9a771f24da458d.png",
+			"email":"23412332@qq.com",
+			"id":1,
+			"nickName":"sg3334",
+			"sex":"1"
+		}
+	},
+	"msg":"操作成功"
+}
+```
+
+### 动态路由
+
+接口设计。后台系统需要能实现不同的用户权限可以看到不同的功能，即左侧的导航栏
+
+前端为了实现动态路由的效果，需要后端有接口能返回用户所能访问的菜单数据。注意: 返回的菜单数据需要体现父子菜单的层级关系
+如果用户id为1代表管理员，menus中需要有所有菜单类型为C或者M的，C表示菜单，M表示目录，状态为正常的，未被删除的权限
+
+
+### 标签列表
+
+实现对于标签的增删改查，后面的也都一样配置。

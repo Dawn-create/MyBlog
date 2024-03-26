@@ -92,8 +92,6 @@ public class BlogLoginServiceImpl implements BlogLoginService {
         redisCache.deleteObject("bloglogin"+userid);
         return ResponseResult.okResult();
 
-
-
     }
 
 }

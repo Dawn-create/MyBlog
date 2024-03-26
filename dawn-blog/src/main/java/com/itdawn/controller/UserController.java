@@ -4,11 +4,14 @@ import com.itdawn.annotation.SystemLog;
 import com.itdawn.domain.ResponseResult;
 import com.itdawn.domain.entity.User;
 import com.itdawn.service.UserService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/user")
+@Api(tags = "用户的相关接口文档", description = "我是描述信息")
+
 public class UserController {
 
     @Autowired

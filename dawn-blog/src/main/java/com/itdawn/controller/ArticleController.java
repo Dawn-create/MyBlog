@@ -3,11 +3,14 @@ package com.itdawn.controller;
 import com.itdawn.annotation.SystemLog;
 import com.itdawn.domain.ResponseResult;
 import com.itdawn.service.ArticleService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/article")
+@Api(tags = "文章的相关接口文档", description = "我是描述信息")
+
 public class ArticleController {
     @Autowired
     //注入公共模块的ArticleService接口
@@ -51,9 +54,7 @@ public class ArticleController {
 
     @PutMapping("/updateViewCount/{id}")
     @SystemLog(businessName = "根据文章id从mysql查询文章")
-    public ResponseResult updateViewCount(@PathVariable("id") Long id){
+    public ResponseResult updateViewCount(@PathVariable("id") Long id) {
         return articleService.updateViewCount(id);
-
     }
-
 }
